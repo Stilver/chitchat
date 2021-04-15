@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up!</title>
+    <link rel="stylesheet" type="text/css" href="../../static/registration/sign_style.css" media="screen" />
+</head>
+<body>
+    <form id="sign_form" method="POST" action="/">
+        {% csrf_token %}
+        <input type="submit" value="Sign Up!">
+    </form>
+</body>
+</html>

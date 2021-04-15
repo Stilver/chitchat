@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../../static/registration/sign_style.css" media="screen" />
+    <style>
+        #login_button {
+            margin-left: 117px;
+        }
+        table {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="sign_form">Log In</h2>
+    <form id="sign_form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr>
+        </table>
+        <input type="submit" id="login_button" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+        <a href="/signup">Sign Up</a>
+    </form>
+</body>
+</html>
