@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <title>Profile</title>
     <style>
+        header {
+            display: block;
+        }
         #logout_button {
             float: right;
+        }
+        #search_bar {
+            margin-left: 200px;
+            display: inline-block;
+        }
+        body {
+            margin-left: auto;
+            margin-right: auto;
+            width: 800px;
         }
     </style>
 </head>
 <body>
     <header>
+        Hi, {{ first_name }}!
+        <form id="search_bar" method="POST" action="/search_user">
+            <label for="search_info">Find users!</label>
+            <input id="search_info" type="text" name="username">
+        </form>
         <a id="logout_button" href="/logout">Logout</a>
     </header>
-    <nav>
-        Hi, {{ first_name }}!
-    </nav>
 </body>
 </html>
